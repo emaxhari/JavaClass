@@ -145,7 +145,7 @@ public class Instructor {
     }
    @Override
     public String toString(){
-    return getFName()+" "+getLName()+" "+getGender();
+    return getFName()+" "+getLName()+" "+getId()+" "+getGender();
 } 
 }
 

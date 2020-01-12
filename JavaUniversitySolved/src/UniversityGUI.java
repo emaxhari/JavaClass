@@ -165,6 +165,7 @@ public class UniversityGUI extends javax.swing.JFrame {
         });
 
         IDeleteBtn.setText("Delete");
+        IDeleteBtn.setEnabled(false);
         IDeleteBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IDeleteBtnActionPerformed(evt);
@@ -172,6 +173,7 @@ public class UniversityGUI extends javax.swing.JFrame {
         });
 
         IUpdateBtn.setText("Update");
+        IUpdateBtn.setEnabled(false);
         IUpdateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 IUpdateBtnActionPerformed(evt);
@@ -942,8 +944,8 @@ public class UniversityGUI extends javax.swing.JFrame {
         ListModel lModel = IlistPanel.getModel();
 
         Instructor instructor = (Instructor) lModel.getElementAt(index);
-        instructor.setFName(firstNameField.getText());
-        instructor.setLName(lastNameField.getText());
+        instructor.setFName(INameTxt.getText());
+        instructor.setLName(ILastNametxt.getText());
         instructor.setId(IIdTxt.getText());
         instructor.setGender((String) IGenderCmbox.getSelectedItem());
 
@@ -955,7 +957,7 @@ public class UniversityGUI extends javax.swing.JFrame {
         }
         dlm.removeElementAt(index);
         dlm.addElement(instructor);
-        IlistPanel.setModel(lModel);
+        IlistPanel.setModel(dlm);
         //turn off the delete and update buttons
         IUpdateBtn.setEnabled(false);
         IDeleteBtn.setEnabled(false);

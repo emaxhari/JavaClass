@@ -165,7 +165,7 @@ public class Student {
     }
     @Override
     public String toString(){
-    return getFName()+" "+getLName()+" "+getGender();
+    return getFName()+" "+getLName()+" "+getGender()+" "+getDob();
 } 
 }
 
